@@ -1,7 +1,21 @@
 export default interface Player {
   id: number;
   name: string;
-  type?: string[];
+  type?:
+    | "Guerre"
+    | "Sagesse"
+    | "Liberté"
+    | "Souverain"
+    | "Mort"
+    | "Forge"
+    | "Péché"
+    | "Marin"
+    | "Union"
+    | "Sacre"
+    | "Chasse"
+    | "Art"
+    | "Passion"
+    | "Nature";
   stats: {
     pv: number;
     strength: number;
@@ -12,5 +26,5 @@ export default interface Player {
   };
   currentDrachmas?: number;
   totalDrachmas?: number; // currentDrachmas+spendDrachmas
-  inGame?: boolean;
+  inGame: boolean;
 }

@@ -1,31 +1,23 @@
 <script setup lang="ts">
-import TodoItem from "@/components/TodoItem.vue";
-import { useTodos } from "@/stores/todos";
+import PlayerListItem from "./PlayerListItem.vue";
+import { usePlayers } from "@/stores/players";
 
-const todoStore = useTodos();
-const todoList = todoStore.todos;
-
-function check(id: number) {
-    console.log(id);
-    todoStore.checkTodo(id);
-}
+const playerStore = usePlayers();
+const playerList = playerStore.players;
 </script>
-    
-<template>
-    <div class="player-list">
-        <ul>
-            <li v-for="todo in todoList" :key="todo.id">
-                <TodoItem>
-                    <template #heading>{{ todo.text }}</template>
-                    <input type="checkbox" id="test" name="test" v-model="todo.isFinished" @click="check(todo.id)" />
-                    {{ todo.id + " " + todo.isFinished }}
-                </TodoItem>
-            </li>
-        </ul>
-    </div>
-</template>
-    
-<style scoped>
 
+<template>
+  <ul class="player-list">
+    <li v-for="player in playerList" :key="player.id">
+      <PlayerListItem :player="player" />
+    </li>
+  </ul>
+</template>
+
+<style scoped>
+.player-list {
+  display: flex;
+  flex-flow: column-reverse;
+  list-style-type: none;
+}
 </style>
-    

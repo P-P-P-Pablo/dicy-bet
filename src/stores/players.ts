@@ -28,14 +28,16 @@ export const usePlayers = defineStore("players", {
       }
       return this.players;
     },
+    maxID(state): number {
+      return this.nextId + 1;
+    },
   },
   actions: {
     // any amount of arguments, return a promise or not
     addPlayer(player: Player) {
       // you can directly mutate the state
-      if (player.id < this.nextId) player.id = this.nextId;
       this.players.push(player);
-      this.nextId = this.players.length + 1;
+      console.log(this.players);
     },
     checkInPlayer(id: number) {
       this.players.map((player) => {
