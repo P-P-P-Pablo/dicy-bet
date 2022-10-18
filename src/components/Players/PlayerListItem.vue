@@ -22,7 +22,7 @@
         <div>In This Game ?</div>
         <div>{{ player.inGame ? "Yes" : "No" }}</div>
         <button @click="checkInOut(player.inGame, player.id)">
-          {{ player.inGame ? "Check-in Player" : "Check-out Player" }}
+          {{ player.inGame ? "Check-out Player" : "Check-in Player" }}
         </button>
       </div>
     </div>

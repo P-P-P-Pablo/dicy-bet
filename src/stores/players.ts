@@ -6,7 +6,6 @@ export const usePlayers = defineStore("players", {
     players: [] as Player[],
     filter: "all" as "all" | "in-game" | "out-of-game",
     // type will be automatically inferred to number
-    nextId: 0,
   }),
   getters: {
     inGamePlayers(state) {
@@ -20,16 +19,13 @@ export const usePlayers = defineStore("players", {
      * @returns {Player[]}
      */
     filteredPlayers(state): Player[] {
-      if (this.filter === "in-game") {
+      if (state.filter === "in-game") {
         // call other getters with autocompletion ✨
         return this.inGamePlayers;
-      } else if (this.filter === "out-of-game") {
+      } else if (state.filter === "out-of-game") {
         return this.outOfGamePlayers;
       }
-      return this.players;
-    },
-    maxID(state): number {
-      return this.nextId + 1;
+      return state.players;
     },
   },
   actions: {
@@ -37,7 +33,6 @@ export const usePlayers = defineStore("players", {
     addPlayer(player: Player) {
       // you can directly mutate the state
       this.players.push(player);
-      console.log(this.players);
     },
     checkInPlayer(id: number) {
       this.players.map((player) => {
@@ -45,6 +40,7 @@ export const usePlayers = defineStore("players", {
           player.inGame = true;
         }
       });
+      console.log(this.players);
     },
     checkOutPlayer(id: number) {
       this.players.map((player) => {
@@ -52,6 +48,7 @@ export const usePlayers = defineStore("players", {
           player.inGame = false;
         }
       });
+      console.log(this.players);
     },
   },
 });
