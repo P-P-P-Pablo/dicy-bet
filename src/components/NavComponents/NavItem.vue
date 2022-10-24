@@ -55,7 +55,7 @@ i {
   display: flex;
   place-items: center;
   place-content: center;
-  width: 50px;
+  width: 50%;
   height: 50px;
   top: calc(50% - 25px);
   left: -26px;

@@ -7,8 +7,8 @@ import BlackDice3 from "@/components/icons/BlackDice3.vue";
 
 <template>
   <nav>
-    <RouterLink to="/">
-      <NavItem class="betternav-option">
+    <RouterLink class="betternav-option" to="/">
+      <NavItem>
         <template #icon>
           <BlackDice1 />
         </template>
@@ -18,8 +18,8 @@ import BlackDice3 from "@/components/icons/BlackDice3.vue";
       </NavItem>
     </RouterLink>
 
-    <RouterLink to="/players">
-      <NavItem class="betternav-option">
+    <RouterLink class="betternav-option" to="/players">
+      <NavItem>
         <template #icon>
           <BlackDice2 />
         </template>
@@ -29,8 +29,8 @@ import BlackDice3 from "@/components/icons/BlackDice3.vue";
       </NavItem>
     </RouterLink>
 
-    <RouterLink to="/about">
-      <NavItem class="betternav-option">
+    <RouterLink class="betternav-option" to="/about">
+      <NavItem>
         <template #icon>
           <BlackDice3 />
         </template>
@@ -44,5 +44,6 @@ import BlackDice3 from "@/components/icons/BlackDice3.vue";
 <style scoped>
 .betternav-option {
   margin-left: 40px;
+  height: 10vh;
 }
 </style>

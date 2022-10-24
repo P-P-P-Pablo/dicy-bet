@@ -6,8 +6,13 @@ import HelloWorld from "./components/HelloWorld.vue";
 <template>
   <div class="app">
     <header>
-
-      <img alt="Dice logo" class="logo" src="@\assets\d6_128x128.png" width="128" height="128" />
+      <img
+        alt="Dice logo"
+        class="logo"
+        src="@\assets\d6_128x128.png"
+        width="128"
+        height="128"
+      />
 
       <div class="wrapper">
         <HelloWorld msg="Dicy Bet" />
@@ -23,8 +28,8 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <style scoped>
 .app {
-  width: 800px;
-  height: 800px;
+  width: 100%;
+  height: 100%;
 }
 header {
   position: fixed;
