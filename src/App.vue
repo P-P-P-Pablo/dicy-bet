@@ -4,27 +4,28 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Dice logo"
-      class="logo"
-      src="@\assets\d6_128x128.png"
-      width="128"
-      height="128"
-    />
+  <div class="app">
+    <header>
 
-    <div class="wrapper">
-      <HelloWorld msg="Dicy Bet" />
+      <img alt="Dice logo" class="logo" src="@\assets\d6_128x128.png" width="128" height="128" />
 
-      <BetterNav />
-    </div>
-  </header>
-  <main>
-    <RouterView />
-  </main>
+      <div class="wrapper">
+        <HelloWorld msg="Dicy Bet" />
+
+        <BetterNav />
+      </div>
+    </header>
+    <main>
+      <RouterView />
+    </main>
+  </div>
 </template>
 
 <style scoped>
+.app {
+  width: 800px;
+  height: 800px;
+}
 header {
   position: fixed;
   left: 0;
